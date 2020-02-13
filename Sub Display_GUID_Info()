@@ -1,0 +1,19 @@
+Sub Display_GUID_Info()
+
+'PURPOSE: Displays GUID information for each active _
+Object Library reference in the VBA project
+'SOURCE: www.TheSpreadsheetGuru.com
+
+Dim ref As reference
+     
+'Loop Through Each Active Reference (Displays in Immediate Window [ctrl + g])
+  For Each ref In ThisWorkbook.VBProject.References
+    Debug.Print "Reference Name: ", ref.Name
+    Debug.Print "Path: ", ref.FullPath
+    Debug.Print "GUID: " & ref.GUID
+    Debug.Print "Version: " & ref.Major & "." & ref.Minor
+    Debug.Print " "
+  Next ref
+  
+End Sub
+
